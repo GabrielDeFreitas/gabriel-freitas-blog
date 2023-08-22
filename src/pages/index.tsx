@@ -1,9 +1,15 @@
 //import { Inter } from 'next/font/google'
+import Tiles from "@/components/Tiles"
 
 //const inter = Inter({ subsets: ['latin'] })
+const Index = () => (
+  <>
+    <main className="w-4/5 mx-auto">
+      <div className="p-4">
+        <Tiles/>
+      </div>
+    </main>
+  </>
+)
 
-export default function Home() {
-  return (
-    <h1>test</h1>
-  )
-}
+export default Index
