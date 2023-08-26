@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "\n  query getPages($first: Int) {\n    pages(first: $first) {\n      id\n      heading\n      slug\n      body {\n        html\n      }\n    }\n  }\n": types.GetPagesDocument,
     "\n  query getPageBySlug ($slug: String!) {\n    page(where: {slug: $slug}) {\n      id\n      slug\n      heading\n      body {\n        html\n      }\n    }\n  }\n": types.GetPageBySlugDocument,
+    "\n  query getPosts {\n    posts {\n      id\n      slug\n      name\n      createdAt\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n    }\n  }\n": types.GetPostsDocument,
 };
 
 /**
@@ -39,6 +40,10 @@ export function graphql(source: "\n  query getPages($first: Int) {\n    pages(fi
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query getPageBySlug ($slug: String!) {\n    page(where: {slug: $slug}) {\n      id\n      slug\n      heading\n      body {\n        html\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPageBySlug ($slug: String!) {\n    page(where: {slug: $slug}) {\n      id\n      slug\n      heading\n      body {\n        html\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query getPosts {\n    posts {\n      id\n      slug\n      name\n      createdAt\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPosts {\n    posts {\n      id\n      slug\n      name\n      createdAt\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

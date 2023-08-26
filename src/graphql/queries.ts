@@ -25,3 +25,22 @@ export const GET_PAGE_BY_SLUG = gql `
     }
   }
 `
+
+export const GET_POSTS = gql `
+  query getPosts {
+    posts {
+      id
+      slug
+      name
+      createdAt
+      description {
+        html
+      }
+      image {
+        url
+        height
+        width
+      }
+    }
+  }
+`

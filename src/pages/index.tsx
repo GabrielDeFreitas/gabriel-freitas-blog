@@ -1,21 +1,19 @@
-//import { Inter } from 'next/font/google'
-import Tiles from "@/components/Tiles"
-import LinkWrapper from "@/components/Link"
+import { TilesProps } from "@/components/Tiles";
+import client from "@/graphql/client";
+import { GetPostsQuery } from "@/graphql/generated/graphql";
+import { GET_POSTS } from "@/graphql/queries";
+import HomeTemplate from "@/templates/Home"
 
-//const inter = Inter({ subsets: ['latin'] })
-const Index = () => (
-  <>
-    <main className="w-4/5 mx-auto">
-      <div className="p-4">
-      <LinkWrapper href="/about">
-          <h2>
-            <span>About</span>
-          </h2>
-        </LinkWrapper>
-        <Tiles/>
-      </div>
-    </main>
-  </>
-)
+export default function Home({ posts }: TilesProps) {
+  return <HomeTemplate posts={posts}/>
+}
 
-export default Index
+export const getStaticProps = async () => {
+  const { posts } = await client.request<GetPostsQuery>(GET_POSTS)
+
+  return {
+    props: {
+      posts
+    }
+  }
+}
