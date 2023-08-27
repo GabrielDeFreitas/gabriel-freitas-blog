@@ -27,8 +27,8 @@ export const GET_PAGE_BY_SLUG = gql `
 `
 
 export const GET_POSTS = gql `
-  query getPosts {
-    posts {
+  query getPosts($first: Int) {
+    posts(first: $first) {
       id
       slug
       name
@@ -41,6 +41,25 @@ export const GET_POSTS = gql `
         height
         width
       }
+    }
+  }
+`
+
+export const GET_POST_BY_SLUG = gql `
+  query getPostBySlug($slug: String) {
+    post(where: {slug: $slug}){
+      id
+      slug
+      name
+      description {
+        html
+      }
+      image {
+        url
+        height
+        width
+      }
+      createdAt
     }
   }
 `
