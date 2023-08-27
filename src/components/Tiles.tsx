@@ -18,7 +18,7 @@ const Tiles = ({ posts }: TilesProps) => (
         return (
           <li key={`post-${id}`} className="flex gap-4 flex-col p-8 bg-white border border-gray-300 rounded">
             <span>{createdAt}</span>
-              <LinkWrapper href="/post">
+              <LinkWrapper href={`/posts/${slug}`}>
                 <h2>
                   <span>{name}</span>
                 </h2>
