@@ -18,10 +18,25 @@ export type PostTemplateProps = {
 }
 
 export default function PostTemplate ({ post }: PostTemplateProps) {
+
   return (
     <>
+       <div>
+          {post.image.map((image, index) => (
+            <>
+              <Image
+                key={`photo-${index}`}
+                src={image.url}
+                alt={post.name}
+                width={image.width}
+                height={image.height}
+                quality={75}
+              />
+            </>
+          ))}
+        </div>
       <h1>{post.name}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.description.html }} />
+      <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
     </>
   )
 }
