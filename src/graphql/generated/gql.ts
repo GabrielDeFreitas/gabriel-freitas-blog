@@ -16,7 +16,7 @@ const documents = {
     "\n  query getPages($first: Int) {\n    pages(first: $first) {\n      id\n      heading\n      slug\n      body {\n        html\n      }\n    }\n  }\n": types.GetPagesDocument,
     "\n  query getPageBySlug ($slug: String!) {\n    page(where: {slug: $slug}) {\n      id\n      slug\n      heading\n      body {\n        html\n      }\n    }\n  }\n": types.GetPageBySlugDocument,
     "\n  query getPosts($first: Int) {\n    posts(first: $first) {\n      id\n      slug\n      name\n      createdAt\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n    }\n  }\n": types.GetPostsDocument,
-    "\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n": types.GetPostBySlugDocument,
+    "\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n        text\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n": types.GetPostBySlugDocument,
 };
 
 /**
@@ -48,7 +48,7 @@ export function graphql(source: "\n  query getPosts($first: Int) {\n    posts(fi
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n"];
+export function graphql(source: "\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n        text\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  query getPostBySlug($slug: String) {\n    post(where: {slug: $slug}){\n      id\n      slug\n      name\n      description {\n        html\n        text\n      }\n      image {\n        url\n        height\n        width\n      }\n      createdAt\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

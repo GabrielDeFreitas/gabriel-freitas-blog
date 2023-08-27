@@ -53,6 +53,7 @@ export const GET_POST_BY_SLUG = gql `
       name
       description {
         html
+        text
       }
       image {
         url
