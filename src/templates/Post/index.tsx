@@ -46,7 +46,11 @@ export default function PostTemplate ({ post }: PostTemplateProps) {
           ]
         }}
       />
-       <div>
+      <main className="max-w-2xl mx-auto py-10 px-4">
+        <article className="py-6 prose dark:prose-invert">
+          <h1 className="mb-1 md:mb-6 font-medium text-lg">{post.name}</h1>
+          <p className="my-0 text-gray-600 dark:text-gray-300">Mini description</p>
+          <hr className="my-4"/>
           {post.image.map((image, index) => (
             <>
               <Image
@@ -59,9 +63,9 @@ export default function PostTemplate ({ post }: PostTemplateProps) {
               />
             </>
           ))}
-        </div>
-      <h1>{post.name}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
+          <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
+        </article>
+      </main>
     </>
   )
 }
