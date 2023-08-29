@@ -32,6 +32,7 @@ export const GET_POSTS = gql `
       id
       slug
       name
+      shortDescription
       createdAt
       description {
         html
@@ -51,6 +52,7 @@ export const GET_POST_BY_SLUG = gql `
       id
       slug
       name
+      shortDescription
       description {
         html
         text
