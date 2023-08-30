@@ -5,6 +5,7 @@ import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import Head from 'next/head'
 import Header from '@/components/Header'
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }: AppProps) {
   return <>
@@ -22,6 +23,8 @@ export default function App({ Component, pageProps }: AppProps) {
         height={3}
       />
       <Header/>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
   </>
 }

@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Contact = () => (
   <>
-  <div className="max-w-2xl mx-auto py-1 px-4">
+  <div className="max-w-2xl mx-auto py-1 pb-14 px-4">
     <div className="mb-4 flex items-center rounded-2xl bg-gray-50 p-4 dark:bg-gray-800 md:-mx-6 md:p-6">
       <div className="mr-4">
           <h2 className="font-medium">Get in touch</h2>
