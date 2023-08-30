@@ -1,3 +1,4 @@
+import Comments from '@/components/Comments'
 import Contact from '@/components/Contact'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
@@ -67,6 +68,7 @@ export default function PostTemplate ({ post }: PostTemplateProps) {
           ))}
           <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
           <hr className="my-4"/>
+          <Comments/>
         </article>
       </main>
       <Contact/>
