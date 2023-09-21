@@ -1,20 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Comments extends Component {
-    constructor(props) {
+    private commentBox: React.RefObject<HTMLDivElement>;
+
+    constructor(props: any) {
         super(props);
         this.commentBox = React.createRef();
     }
 
     componentDidMount() {
-        let scriptEl = document.createElement("script");
-        scriptEl.setAttribute("src", "https://utteranc.es/client.js")
-        scriptEl.setAttribute("crossorigin", "anonymous")
-        scriptEl.setAttribute("async", true)
-        scriptEl.setAttribute("repo", "bjcarlson42/youtube-utterance-comments")
-        scriptEl.setAttribute("issue-term", "title")
-        scriptEl.setAttribute("theme", "github-light")
-        this.commentBox.current.appendChild(scriptEl)
+        const scriptEl = document.createElement("script");
+        scriptEl.setAttribute("src", "https://utteranc.es/client.js");
+        scriptEl.setAttribute("crossorigin", "anonymous");
+        scriptEl.setAttribute("async", "true");
+        scriptEl.setAttribute("repo", "GabrielDeFreitas/gabriel-freitas-blog");
+        scriptEl.setAttribute("issue-term", "title");
+        scriptEl.setAttribute("theme", "github-light");
+        this.commentBox.current?.appendChild(scriptEl);
     }
 
     render() {
@@ -22,6 +24,6 @@ export default class Comments extends Component {
             <div style={{ width: '100%' }} id="comments">
                 <div ref={this.commentBox}></div>
             </div>
-        )
+        );
     }
 }
