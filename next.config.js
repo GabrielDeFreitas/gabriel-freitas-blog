@@ -1,14 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**'
-      }
-    ]
-  }
-}
+/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withPWA = require('next-pwa')
+const isProd = process.env.NODE_ENV === 'production'
 
-module.exports = nextConfig
+module.exports = withPWA({
+  swcMinify: true,
+  pwa: {
+    dest: 'public',
+    disable: !isProd
+  },
+  images: {
+    domains: ['media.graphassets.com', 'avatars.githubusercontent.com']
+  }
+})
