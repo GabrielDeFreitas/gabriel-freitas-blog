@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { ModeToggle } from './ModeToggle';
 
 const Header = () => (
   <>
     <header className="max-w-2xl mx-auto py-10 px-4">
       <div className="flex items-center justify-between">
-        <button className="border rounded-md w-6 h-6 flex items-center justify-center"></button>
+        <ModeToggle />
         <nav className="ml-auto text-sm font-medium space-x-6">
           <Link
             className="hover:underline focus:outline-offset-8 focus:outline-black-700 visited:text-wai-green"

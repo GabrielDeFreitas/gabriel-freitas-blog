@@ -1,7 +1,7 @@
 /* eslint-disable */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withPWA = require('next-pwa')
-const isProd = process.env.NODE_ENV === 'production'
+const withPWA = require('next-pwa');
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = withPWA({
   pwa: {
@@ -9,7 +9,7 @@ module.exports = withPWA({
     disable: !isProd,
   },
   images: {
-    domains: ['media.graphassets.com', 'avatars.githubusercontent.com']
+    domains: ['media.graphassets.com', 'avatars.githubusercontent.com'],
   },
   swcMinify: true,
-})
+});

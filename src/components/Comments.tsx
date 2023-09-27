@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-
 import React, { Component } from 'react';
 
 export default class Comments extends Component {

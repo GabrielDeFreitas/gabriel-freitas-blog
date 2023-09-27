@@ -18,8 +18,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...SEO} />
       <NextNProgress color="#29D" startPosition={0.3} stopDelayMs={200} height={3} />
-      <Header />
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
