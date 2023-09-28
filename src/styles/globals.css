@@ -25,3 +25,7 @@ h1 {
 p {
   margin-block: 1.25rem;
 }
+
+.spacePageLink {
+  margin-inline: 0.2rem;
+}
