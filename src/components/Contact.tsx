@@ -6,7 +6,7 @@ const Contact = () => (
       <div className="mb-4 flex items-center rounded-2xl bg-gray-50 p-4 dark:bg-gray-800 md:-mx-6 md:p-6">
         <div className="mr-4">
           <h2 className="font-medium">Get in touch</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="my-1 text-sm text-gray-600 dark:text-gray-400">
             If you want to have a chat, feel free to contact me.
           </p>
         </div>

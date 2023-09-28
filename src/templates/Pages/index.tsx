@@ -28,7 +28,7 @@ const PageTemplate = ({ heading, body }: PageTemplateProps) => (
     />
     <main className="max-w-2xl mx-auto py-10 px-4">
       <article className="py-6 prose dark:prose-invert">
-        <h1 className="mb-1 md:mb-6 font-medium text-lg">{heading}</h1>
+        <h1 className="mb-1 md:mb-6 font-medium text-2xl">{heading}</h1>
         <hr className="my-4" />
         <div dangerouslySetInnerHTML={{ __html: body }} />
         <hr className="my-4" />
