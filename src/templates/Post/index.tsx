@@ -28,9 +28,9 @@ export default function PostTemplate({ post }: PostTemplateProps) {
       <NextSeo
         title={`Gabriel Freitas | Blog - ${post.name}`}
         description={post.description?.text || 'A simple study blog project.'}
-        canonical="https://gabriel-freitas-blog-git-rebase-gabrieldefreitas.vercel.app"
+        canonical="https://gabrielfreitas.blog.com.br"
         openGraph={{
-          url: 'https://gabriel-freitas-blog-git-rebase-gabrieldefreitas.vercel.app',
+          url: 'https://gabrielfreitas.blog.com.br',
           title: `Gabriel Freitas | Blog - ${post.name}`,
           description: post.description?.text || 'A simple study blog project.',
           images: [
