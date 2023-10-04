@@ -48,7 +48,7 @@ export default function PostTemplate({ post }: PostTemplateProps) {
           <h1 className="my-1 font-medium text-2xl min-h-[26px] text-gray-600 dark:text-white">
             {post.name}
           </h1>
-          <p className="my-0 text-gray-600 dark:text-gray-300">{post.shortDescription}</p>
+          <p className="my-0 text-gray-600 dark:text-gray-200">{post.shortDescription}</p>
           <hr className="my-4" />
           {post.image.map((image, index) => (
             <>

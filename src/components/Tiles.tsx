@@ -32,7 +32,11 @@ const Tiles = ({ posts }: TilesProps) => (
                     {shortDescription}
                   </p>
                   <div className="flex items-center gap-1.5">
-                    <Calendar2Week size={18} aria-label="GitHub Icon" className="align-middle" />
+                    <Calendar2Week
+                      size={18}
+                      aria-label="Calendar Icon"
+                      className="align-middle text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200"
+                    />
                     <p className="my-0 dark:text-gray-350 min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
                       {format(new Date(createdAt), 'MMMM d, yyyy |  hh:mm a')}
                     </p>

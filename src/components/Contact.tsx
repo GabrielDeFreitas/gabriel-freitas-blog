@@ -13,18 +13,27 @@ const Contact = () => (
         </div>
         <ul className="flex flex-wrap gap-2 md:justify-end">
           <li>
-            <a href="#">
-              <Github size={25} aria-label="GitHub Icon" />
+            <a
+              href="#"
+              className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
+            >
+              <Github size={25} aria-label="GitHub Icon" className="w-6 h-6" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <Twitter size={25} aria-label="Twitter Icon" />
+            <a
+              href="#"
+              className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
+            >
+              <Twitter size={25} aria-label="Twitter Icon" className="w-6 h-6 fill-current" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <Linkedin size={25} aria-label="Linkedin Icon" />
+            <a
+              href="#"
+              className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
+            >
+              <Linkedin size={25} aria-label="Linkedin Icon" className="w-6 h-6 fill-current" />
             </a>
           </li>
         </ul>
