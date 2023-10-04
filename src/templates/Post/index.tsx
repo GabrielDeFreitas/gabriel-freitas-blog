@@ -45,7 +45,9 @@ export default function PostTemplate({ post }: PostTemplateProps) {
       />
       <main className="max-w-2xl mx-auto py-10 pb-4 px-4">
         <article className="py-6 prose dark:prose-invert">
-          <h1 className="my-1 font-medium text-2xl">{post.name}</h1>
+          <h1 className="my-1 font-medium text-2xl min-h-[26px] text-gray-600 dark:text-white">
+            {post.name}
+          </h1>
           <p className="my-0 text-gray-600 dark:text-gray-300">{post.shortDescription}</p>
           <hr className="my-4" />
           {post.image.map((image, index) => (

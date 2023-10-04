@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { Calendar2Week } from '@styled-icons/bootstrap/Calendar2Week';
 
 type Post = {
   id: string;
@@ -30,9 +31,12 @@ const Tiles = ({ posts }: TilesProps) => (
                   <p className="my-0 dark:text-gray-350 hidden min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
                     {shortDescription}
                   </p>
-                  <p className="my-0 dark:text-gray-350 min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
-                    {format(new Date(createdAt), 'dd/MM/yyyy')}
-                  </p>
+                  <div className="flex items-center gap-1.5">
+                    <Calendar2Week size={18} aria-label="GitHub Icon" className="align-middle" />
+                    <p className="my-0 dark:text-gray-350 min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
+                      {format(new Date(createdAt), 'MMMM d, yyyy |  hh:mm a')}
+                    </p>
+                  </div>
                 </div>
                 <span className="absolute inset-1 -z-10 rounded-2xl bg-gray-100 opacity-0 transition-all duration-200 ease-bounce group-hover:-inset-2 dark:bg-gray-800 md:block group-hover:opacity-100"></span>
               </Link>

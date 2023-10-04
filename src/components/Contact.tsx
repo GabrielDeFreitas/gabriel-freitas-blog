@@ -7,7 +7,7 @@ const Contact = () => (
     <div className="max-w-2xl mx-auto py-1 pb-14 px-4">
       <div className="mb-4 flex flex-col md:flex-row items-start md:items-center rounded-2xl bg-gray-50 p-4 dark:bg-gray-800 md:-mx-6 md:p-6">
         <div className="flex-grow">
-          <h2 className="font-medium mb-2 md:mb-0">
+          <h2 className="min-h-[26px] text-gray-600 dark:text-white font-medium mb-2 md:mb-0">
             If you want to have a chat, feel free to contact me.
           </h2>
         </div>
