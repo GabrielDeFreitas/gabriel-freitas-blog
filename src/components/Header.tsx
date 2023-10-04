@@ -19,12 +19,6 @@ const Header = () => (
           >
             About
           </Link>
-          <Link
-            className="hover:underline focus:outline-offset-8 focus:outline-black-700 visited:text-wai-green"
-            href="/contact"
-          >
-            Contact
-          </Link>
         </nav>
       </div>
     </header>

@@ -1,27 +1,27 @@
 if (!self.define) {
   let e,
     s = {};
-  const a = (a, n) => (
-    (a = new URL(a + '.js', n).href),
-    s[a] ||
+  const n = (n, i) => (
+    (n = new URL(n + '.js', i).href),
+    s[n] ||
       new Promise((s) => {
         if ('document' in self) {
           const e = document.createElement('script');
-          (e.src = a), (e.onload = s), document.head.appendChild(e);
-        } else (e = a), importScripts(a), s();
+          (e.src = n), (e.onload = s), document.head.appendChild(e);
+        } else (e = n), importScripts(n), s();
       }).then(() => {
-        let e = s[a];
-        if (!e) throw new Error(`Module ${a} didn’t register its module`);
+        let e = s[n];
+        if (!e) throw new Error(`Module ${n} didn’t register its module`);
         return e;
       })
   );
-  self.define = (n, t) => {
-    const i = e || ('document' in self ? document.currentScript.src : '') || location.href;
-    if (s[i]) return;
+  self.define = (i, t) => {
+    const a = e || ('document' in self ? document.currentScript.src : '') || location.href;
+    if (s[a]) return;
     let c = {};
-    const r = (e) => a(e, i),
-      o = { module: { uri: i }, exports: c, require: r };
-    s[i] = Promise.all(n.map((e) => o[e] || r(e))).then((e) => (t(...e), c));
+    const r = (e) => n(e, a),
+      o = { module: { uri: a }, exports: c, require: r };
+    s[a] = Promise.all(i.map((e) => o[e] || r(e))).then((e) => (t(...e), c));
   };
 }
 define(['./workbox-50de5c5d'], function (e) {
@@ -31,56 +31,56 @@ define(['./workbox-50de5c5d'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        { url: '/_next/server/middleware-build-manifest.js', revision: 'RmEtxpakSmhaceW5JirUh' },
+        { url: '/_next/server/middleware-build-manifest.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
         {
           url: '/_next/server/middleware-react-loadable-manifest.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
-        { url: '/_next/server/next-font-manifest.js', revision: 'RmEtxpakSmhaceW5JirUh' },
-        { url: '/_next/server/next-font-manifest.json', revision: 'RmEtxpakSmhaceW5JirUh' },
+        { url: '/_next/server/next-font-manifest.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
+        { url: '/_next/server/next-font-manifest.json', revision: 'EXdjiuAUdSRkNhW6zRhke' },
         {
-          url: '/_next/static/RmEtxpakSmhaceW5JirUh/_buildManifest.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/EXdjiuAUdSRkNhW6zRhke/_buildManifest.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
-          url: '/_next/static/RmEtxpakSmhaceW5JirUh/_ssgManifest.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/EXdjiuAUdSRkNhW6zRhke/_ssgManifest.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
-        { url: '/_next/static/chunks/260-34e9af46e702c91a.js', revision: 'RmEtxpakSmhaceW5JirUh' },
+        { url: '/_next/static/chunks/885-119172a3cb28e97d.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
         {
           url: '/_next/static/chunks/framework-63157d71ad419e09.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
-        { url: '/_next/static/chunks/main-b3a87bfb42ae09b9.js', revision: 'RmEtxpakSmhaceW5JirUh' },
+        { url: '/_next/static/chunks/main-b3a87bfb42ae09b9.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
         {
-          url: '/_next/static/chunks/pages/%5Bslug%5D-48fe7d10bf4b1ee8.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/chunks/pages/%5Bslug%5D-2510d48c54516c73.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
-          url: '/_next/static/chunks/pages/_app-683573d1cb81290f.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/chunks/pages/_app-b9c5582587b81b8e.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
           url: '/_next/static/chunks/pages/_error-54de1933a164a1ff.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
-          url: '/_next/static/chunks/pages/index-974c7d6cfaa34f58.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/chunks/pages/index-d16f7001b24c7a77.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
-          url: '/_next/static/chunks/pages/posts/%5Bslug%5D-1002e780836fd8e3.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          url: '/_next/static/chunks/pages/posts/%5Bslug%5D-226753cf7bf465f6.js',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
           url: '/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
         {
           url: '/_next/static/chunks/webpack-b8f8d6679aaa5f42.js',
-          revision: 'RmEtxpakSmhaceW5JirUh',
+          revision: 'EXdjiuAUdSRkNhW6zRhke',
         },
-        { url: '/_next/static/css/87568aa37510f789.css', revision: 'RmEtxpakSmhaceW5JirUh' },
+        { url: '/_next/static/css/bbaf3f4c529005a7.css', revision: 'EXdjiuAUdSRkNhW6zRhke' },
         { url: '/favicon.ico', revision: 'c30c7d42707a47a3f4591831641e50dc' },
         { url: '/img/cover.PNG', revision: '243e2d3d65af3f0e29aa5643f50a0fd8' },
         { url: '/img/icon-192.png', revision: 'd27169d080684ebb57b8387d05c4b444' },
@@ -98,7 +98,7 @@ define(['./workbox-50de5c5d'], function (e) {
         cacheName: 'start-url',
         plugins: [
           {
-            cacheWillUpdate: async ({ request: e, response: s, event: a, state: n }) =>
+            cacheWillUpdate: async ({ request: e, response: s, event: n, state: i }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, { status: 200, statusText: 'OK', headers: s.headers })
                 : s,
