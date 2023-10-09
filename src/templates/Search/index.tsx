@@ -48,7 +48,7 @@ const SearchTemplate = ({ posts }: TilesProps) => {
         }}
       />
       <SearchInput posts={posts} onSearch={handleSearchResults} />
-      {showResults && <Tiles posts={searchResults} />}{' '}
+      {showResults && searchResults.length > 0 && <Tiles posts={searchResults} />}{' '}
     </>
   );
 };
