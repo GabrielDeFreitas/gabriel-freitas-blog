@@ -59,6 +59,8 @@ export default function PostTemplate({ post }: PostTemplateProps) {
                 width={image.width}
                 height={image.height}
                 quality={75}
+                blurDataURL={image.url}
+                loading="lazy"
               />
             </>
           ))}
