@@ -11,14 +11,14 @@ const PageTemplate = ({ heading, body }: PageTemplateProps) => (
     <NextSeo
       title={`Gabriel Freitas | Blog - ${heading}`}
       description={heading || 'A simple study blog project.'}
-      canonical="https://gabrielfreitas.blog.com.br"
+      canonical="https://gabriel-freitas-blog.vercel.app"
       openGraph={{
-        url: 'https://gabrielfreitas.blog.com.br',
+        url: 'https://gabriel-freitas-blog.vercel.app',
         title: `Gabriel Freitas | Blog - ${heading}`,
         description: heading || 'A simple study blog project.',
         images: [
           {
-            url: 'https://gabrielfreitas.blog.com.br/img/cover.png',
+            url: 'https://gabriel-freitas-blog.vercel.app/img/cover.png',
             width: 1280,
             height: 720,
             alt: 'Gabriel Freitas | Blog',

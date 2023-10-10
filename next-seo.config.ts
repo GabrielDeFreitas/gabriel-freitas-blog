@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gabrielfreitas.blog.com.br',
+    url: 'https://gabriel-freitas-blog.vercel.app',
     siteName: 'Gabriel Freitas | Blog',
   },
   twitter: {
