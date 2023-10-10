@@ -9,19 +9,13 @@ export default class Comments extends Component {
   }
 
   componentDidMount() {
-    const repoName = 'GabrielDeFreitas/gabriel-freitas-blog';
-    const domainName = 'gabriel-freitas-blog.vercel.app';
     const scriptEl = document.createElement('script');
-
     scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
     scriptEl.setAttribute('crossorigin', 'anonymous');
     scriptEl.setAttribute('async', 'true');
-    scriptEl.setAttribute('repo', repoName);
-    scriptEl.setAttribute('issue-term', 'pathname');
+    scriptEl.setAttribute('repo', 'GabrielDeFreitas/gabriel-freitas-blog');
+    scriptEl.setAttribute('issue-term', 'title');
     scriptEl.setAttribute('theme', 'github-light');
-    scriptEl.setAttribute('label', 'comments');
-    scriptEl.setAttribute('homepage', `https://${domainName}`);
-
     this.commentBox.current?.appendChild(scriptEl);
   }
 
