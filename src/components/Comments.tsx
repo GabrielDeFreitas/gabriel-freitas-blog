@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 
-export default class Comments extends Component {
-  private commentBox: React.RefObject<HTMLDivElement>;
+import useScript from '../libs/use-script';
 
-  constructor(props: any) {
-    super(props);
-    this.commentBox = React.createRef();
-  }
+const Comments = () => {
+  const comment = useRef(null);
 
-  componentDidMount() {
-    const scriptEl = document.createElement('script');
-    scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
-    scriptEl.setAttribute('crossorigin', 'anonymous');
-    scriptEl.setAttribute('async', 'true');
-    scriptEl.setAttribute('repo', 'GabrielDeFreitas/gabriel-freitas-blog');
-    scriptEl.setAttribute('issue-term', 'title');
-    scriptEl.setAttribute('theme', 'github-light');
-    this.commentBox.current?.appendChild(scriptEl);
-  }
+  const status = useScript({
+    url: 'https://utteranc.es/client.js',
+    theme: 'github-dark',
+    issueTerm: 'url',
+    repo: 'GabrielDeFreitas/gabriel-freitas-blog',
+    ref: comment,
+  });
 
-  render() {
-    return (
-      <div style={{ width: '100%' }} id="comments">
-        <div ref={this.commentBox}></div>
-      </div>
-    );
-  }
-}
+  console.log(status);
+  return <div className="w-full">{<div ref={comment}></div>}</div>;
+};
+
+export default Comments;
