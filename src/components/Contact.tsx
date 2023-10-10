@@ -2,7 +2,6 @@ import { Github } from '@styled-icons/bootstrap/Github';
 import { Twitter } from '@styled-icons/bootstrap/Twitter';
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin';
 import Link from 'next/link';
-import socialLinks from '/home/gabrielfreitas/nextjs-blog-template/src/templates/socialLinks.json';
 
 const Contact = () => (
   <>
@@ -16,7 +15,7 @@ const Contact = () => (
         <ul className="flex flex-wrap gap-2 md:justify-end">
           <li>
             <Link
-              href={socialLinks.github}
+              href={'https://github.com/GabrielDeFreitas'}
               className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
             >
               <Github size={25} aria-label="GitHub Icon" className="w-6 h-6" />
@@ -24,7 +23,7 @@ const Contact = () => (
           </li>
           <li>
             <Link
-              href={socialLinks.twitter}
+              href={'https://twitter.com/refri_comfrango'}
               className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
             >
               <Twitter size={25} aria-label="Twitter Icon" className="w-6 h-6 fill-current" />
@@ -32,7 +31,7 @@ const Contact = () => (
           </li>
           <li>
             <Link
-              href={socialLinks.linkedin}
+              href={'https://www.linkedin.com/in/gabrielfreitas21/'}
               className="text-gray-500 dark:text-gray-200 transition-colors hover:text-gray-800 dark:hover:text-gray-400"
             >
               <Linkedin size={25} aria-label="Linkedin Icon" className="w-6 h-6 fill-current" />
