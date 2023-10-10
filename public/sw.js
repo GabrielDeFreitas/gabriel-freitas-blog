@@ -1,8 +1,8 @@
 if (!self.define) {
   let e,
     s = {};
-  const n = (n, i) => (
-    (n = new URL(n + '.js', i).href),
+  const n = (n, t) => (
+    (n = new URL(n + '.js', t).href),
     s[n] ||
       new Promise((s) => {
         if ('document' in self) {
@@ -15,13 +15,13 @@ if (!self.define) {
         return e;
       })
   );
-  self.define = (i, t) => {
+  self.define = (t, i) => {
     const a = e || ('document' in self ? document.currentScript.src : '') || location.href;
     if (s[a]) return;
     let c = {};
     const r = (e) => n(e, a),
       o = { module: { uri: a }, exports: c, require: r };
-    s[a] = Promise.all(i.map((e) => o[e] || r(e))).then((e) => (t(...e), c));
+    s[a] = Promise.all(t.map((e) => o[e] || r(e))).then((e) => (i(...e), c));
   };
 }
 define(['./workbox-50de5c5d'], function (e) {
@@ -31,56 +31,60 @@ define(['./workbox-50de5c5d'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        { url: '/_next/server/middleware-build-manifest.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
+        { url: '/_next/server/middleware-build-manifest.js', revision: 'z0VhgRKBde9OGDWugZmDI' },
         {
           url: '/_next/server/middleware-react-loadable-manifest.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
-        { url: '/_next/server/next-font-manifest.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
-        { url: '/_next/server/next-font-manifest.json', revision: 'EXdjiuAUdSRkNhW6zRhke' },
-        {
-          url: '/_next/static/EXdjiuAUdSRkNhW6zRhke/_buildManifest.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
-        },
-        {
-          url: '/_next/static/EXdjiuAUdSRkNhW6zRhke/_ssgManifest.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
-        },
-        { url: '/_next/static/chunks/885-119172a3cb28e97d.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
+        { url: '/_next/server/next-font-manifest.js', revision: 'z0VhgRKBde9OGDWugZmDI' },
+        { url: '/_next/server/next-font-manifest.json', revision: 'z0VhgRKBde9OGDWugZmDI' },
+        { url: '/_next/static/chunks/315-06ba1b4e535bc940.js', revision: 'z0VhgRKBde9OGDWugZmDI' },
         {
           url: '/_next/static/chunks/framework-63157d71ad419e09.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
-        { url: '/_next/static/chunks/main-b3a87bfb42ae09b9.js', revision: 'EXdjiuAUdSRkNhW6zRhke' },
+        { url: '/_next/static/chunks/main-b3a87bfb42ae09b9.js', revision: 'z0VhgRKBde9OGDWugZmDI' },
         {
-          url: '/_next/static/chunks/pages/%5Bslug%5D-2510d48c54516c73.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          url: '/_next/static/chunks/pages/%5Bslug%5D-eb6d985f11c0454e.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
-          url: '/_next/static/chunks/pages/_app-b9c5582587b81b8e.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          url: '/_next/static/chunks/pages/_app-9245ff98f2bb8c87.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
           url: '/_next/static/chunks/pages/_error-54de1933a164a1ff.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
-          url: '/_next/static/chunks/pages/index-d16f7001b24c7a77.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          url: '/_next/static/chunks/pages/index-48b61d717c3d2b10.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
-          url: '/_next/static/chunks/pages/posts/%5Bslug%5D-226753cf7bf465f6.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          url: '/_next/static/chunks/pages/posts/%5Bslug%5D-b1087caa5bc0b727.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
+        },
+        {
+          url: '/_next/static/chunks/pages/search-07e44caee3673887.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
           url: '/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
         {
-          url: '/_next/static/chunks/webpack-b8f8d6679aaa5f42.js',
-          revision: 'EXdjiuAUdSRkNhW6zRhke',
+          url: '/_next/static/chunks/webpack-f164db4954bac6ec.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
         },
-        { url: '/_next/static/css/bbaf3f4c529005a7.css', revision: 'EXdjiuAUdSRkNhW6zRhke' },
+        { url: '/_next/static/css/8469a33ea4f4ac46.css', revision: 'z0VhgRKBde9OGDWugZmDI' },
+        {
+          url: '/_next/static/z0VhgRKBde9OGDWugZmDI/_buildManifest.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
+        },
+        {
+          url: '/_next/static/z0VhgRKBde9OGDWugZmDI/_ssgManifest.js',
+          revision: 'z0VhgRKBde9OGDWugZmDI',
+        },
         { url: '/favicon.ico', revision: 'c30c7d42707a47a3f4591831641e50dc' },
         { url: '/img/cover.PNG', revision: '243e2d3d65af3f0e29aa5643f50a0fd8' },
         { url: '/img/icon-192.png', revision: 'd27169d080684ebb57b8387d05c4b444' },
@@ -98,7 +102,7 @@ define(['./workbox-50de5c5d'], function (e) {
         cacheName: 'start-url',
         plugins: [
           {
-            cacheWillUpdate: async ({ request: e, response: s, event: n, state: i }) =>
+            cacheWillUpdate: async ({ request: e, response: s, event: n, state: t }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, { status: 200, statusText: 'OK', headers: s.headers })
                 : s,
