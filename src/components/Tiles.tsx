@@ -28,19 +28,19 @@ const Tiles = ({ posts = [] }: TilesProps) => (
                   href={`/posts/${slug}`}
                 >
                   <div>
-                    <h2 className="min-h-[26px] text-gray-600 dark:text-white font-medium">
+                    <h2 className="title-text-transform min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
                       {name}
                     </h2>
                     <p className="my-0 dark:text-gray-350 hidden min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
                       {shortDescription}
                     </p>
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex gap-1.5">
                       <Calendar2Week
-                        size={18}
+                        size={21}
                         aria-label="Calendar Icon"
                         className="align-middle text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200"
                       />
-                      <p className="my-0 dark:text-gray-350 min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
+                      <p className="italic my-0 dark:text-gray-350 min-h-[26px] text-gray-500 transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-200 sm:block">
                         {format(new Date(createdAt), 'MMMM d, yyyy |  hh:mm a')}
                       </p>
                     </div>

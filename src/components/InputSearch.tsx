@@ -35,7 +35,7 @@ const SearchInput = ({ onSearch, posts }: SearchInputProps) => {
 
   return (
     <div className="max-w-2xl mx-auto py-10 pb-4 px-4 mb-[-4rem]">
-      <h1 className="my-1 font-medium text-2xl min-h-[26px] text-gray-600 dark:text-white">
+      <h1 className="title-text-transform my-1 font-medium text-2xl min-h-[26px] text-gray-600 dark:text-white">
         Search
       </h1>
       <p className="min-h-[26px] text-gray-600 dark:text-white font-medium">
