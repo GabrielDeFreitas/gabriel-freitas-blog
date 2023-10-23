@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import { NextSeo } from 'next-seo';
 import Tiles, { TilesProps } from '@/components/Tiles';
 
 const HomeTemplate = ({ posts }: TilesProps) => {
@@ -22,6 +23,25 @@ const HomeTemplate = ({ posts }: TilesProps) => {
 
   return (
     <>
+      <NextSeo
+        title="Gabriel Freitas | Blog"
+        description="A simple study blog project"
+        canonical="https://gabriel-freitas-blog.vercel.app"
+        openGraph={{
+          url: 'https://gabriel-freitas-blog.vercel.app',
+          title: 'Gabriel Freitas | Blog',
+          description: 'A simple study blog project',
+          images: [
+            {
+              url: 'https://gabriel-freitas-blog.vercel.app/img/cover.png',
+              width: 1280,
+              height: 720,
+              alt: 'Gabriel Freitas | Blog',
+            },
+          ],
+          site_name: 'Gabriel Freitas | Blog',
+        }}
+      />
       <Tiles posts={paginatedPosts} />
       <div className="max-w-2xl mx-auto py-10 px-4">
         {pageCount > 1 && (
