@@ -30,7 +30,7 @@ export default function PostTemplate({ post }: PostTemplateProps) {
         description={post.description?.text || 'A simple study blog project.'}
         canonical="https://gabriel-freitas-blog.vercel.app/"
         openGraph={{
-          url: 'https://gabriel-freitas-blog.vercel.app',
+          url: 'https://gabriel-freitas-blog.vercel.app/',
           title: `Gabriel Freitas | Blog - ${post.name}`,
           description: post.description?.text || 'A simple study blog project.',
           images: [
