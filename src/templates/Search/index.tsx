@@ -31,7 +31,7 @@ const SearchTemplate = ({ posts }: TilesProps) => {
       <NextSeo
         title="Gabriel Freitas | Blog"
         description="A simple study blog project"
-        canonical="https://gabriel-freitas-blog.vercel.app"
+        canonical="https://gabriel-freitas-blog.vercel.app/"
         openGraph={{
           url: 'https://gabriel-freitas-blog.vercel.app',
           title: 'Gabriel Freitas | Blog',
