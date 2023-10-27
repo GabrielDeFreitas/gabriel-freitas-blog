@@ -7,12 +7,12 @@
 PageSpeed ​​Insights (PSI) tells you how a page actually performs on mobile and desktop.
 
 <img
-  src="/home/gabrielfreitas/nextjs-blog-template/public/img/pagespeed_Insight/cellphone.PNG"
+  src="public/img/pagespeed_Insight/cellphone.PNG"
   alt="PageSpeed ​​Insights performs on mobile version"
   title="Optional title">
 
 <img
-  src="/home/gabrielfreitas/nextjs-blog-template/public/img/pagespeed_Insight/computer.PNG"
+  src="public/img/pagespeed_Insight/computer.PNG"
   alt="PageSpeed ​​Insights performs on computer version"
   title="Optional title">
 
