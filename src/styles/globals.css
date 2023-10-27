@@ -26,6 +26,16 @@ p {
   margin-block: 1.25rem;
 }
 
+code {
+  background-color: rgb(27, 29, 35) !important;
+  color: rgb(175, 97, 97) !important;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  border-radius: 6px;
+}
+
 .custom-page-buttom-active {
   filter: saturate(900%);
 }
