@@ -30,7 +30,7 @@ export default function PostTemplate({ post }: PostTemplateProps) {
         description={post.description?.text || 'A simple study blog project.'}
         canonical="https://gabriel-freitas-blog.vercel.app"
         openGraph={{
-          url: 'https://gabriel-freitas-blog.vercel.app',
+          url: `https://willianjusten.com.br/${post.slug}`,
           title: `Gabriel Freitas | Blog - ${post.name}`,
           description: post.description?.text || 'A simple study blog project.',
           images: [
@@ -69,7 +69,7 @@ export default function PostTemplate({ post }: PostTemplateProps) {
           ))}
           <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
           <hr className="my-4" />
-          <Comments />
+          <Comments title={post.name} />
         </article>
       </main>
       <Contact />

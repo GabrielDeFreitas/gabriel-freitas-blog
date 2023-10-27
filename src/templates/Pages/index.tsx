@@ -13,7 +13,7 @@ const PageTemplate = ({ heading, body }: PageTemplateProps) => (
       description={heading || 'A simple study blog project.'}
       canonical="https://gabriel-freitas-blog.vercel.app"
       openGraph={{
-        url: 'https://gabriel-freitas-blog.vercel.app',
+        url: `https://willianjusten.com.br/${heading}`,
         title: `Gabriel Freitas | Blog - ${heading}`,
         description: heading || 'A simple study blog project.',
         images: [
