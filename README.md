@@ -29,6 +29,7 @@ After you need to create the Schema, just follow the steps:
   - `Single Line Text` as `name`
   - `Slug` as `slug`
   - `Rich Text` as `description`
+  - `Single Line Text` as `shortDescription`
   - `Asset Picker` as `gallery`
 
 - Schema > Add New Model with `Page` name
