@@ -69,7 +69,7 @@ export default function PostTemplate({ post }: PostTemplateProps) {
           ))}
           <div dangerouslySetInnerHTML={{ __html: post.description?.html || '' }} />
           <hr className="my-4" />
-          <Comments title={post.name} />
+          <Comments />
         </article>
       </main>
       <Contact />

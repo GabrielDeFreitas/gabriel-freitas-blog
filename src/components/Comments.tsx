@@ -1,48 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import React, { Component } from 'react';
 
-const Comments = ({ title }: { title: string }) => {
-  const commentBox = useRef<HTMLDivElement | null>(null);
+export default class Comments extends Component {
+  private commentBox: React.RefObject<HTMLDivElement>;
 
-  useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'light';
-    const utterancesTheme = theme === 'light' ? 'github-light' : 'github-dark';
+  constructor(props: any) {
+    super(props);
+    this.commentBox = React.createRef();
+  }
 
-    const observeThemeSwitch = () => {
-      const utterances = document.querySelector('.utterances-frame') as HTMLIFrameElement | null;
-      if (utterances) {
-        const themeClass = utterances.classList.contains('github-light') ? 'light' : 'dark';
-        const message = {
-          type: 'set-theme',
-          theme: themeClass,
-        };
-        const contentWindow = utterances.contentWindow;
-        if (contentWindow) {
-          contentWindow.postMessage(message, 'https://utteranc.es');
-        }
-      }
-    };
-
+  componentDidMount() {
     const scriptEl = document.createElement('script');
-    scriptEl.setAttribute('theme', utterancesTheme);
     scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
     scriptEl.setAttribute('crossorigin', 'anonymous');
+    scriptEl.setAttribute('async', 'true');
     scriptEl.setAttribute('repo', 'GabrielDeFreitas/gabriel-freitas-blog');
     scriptEl.setAttribute('issue-term', 'title');
+    scriptEl.setAttribute('theme', 'github-light');
+    this.commentBox.current?.appendChild(scriptEl);
+  }
 
-    if (commentBox.current) {
-      commentBox.current.replaceChildren(scriptEl);
-    }
-
-    observeThemeSwitch();
-    const observer = new MutationObserver(observeThemeSwitch);
-    observer.observe(document.body, { attributes: true });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [title]);
-
-  return <div ref={commentBox} />;
-};
-
-export default Comments;
+  render() {
+    return (
+      <div style={{ width: '100%' }} id="comments">
+        <div ref={this.commentBox}></div>
+      </div>
+    );
+  }
+}
