@@ -1,38 +1,45 @@
 import React, { useEffect, useRef } from 'react';
 
-const Comments = ({ title }) => {
-  const commentBox = useRef(null);
+const Comments = ({ title }: { title: string }) => {
+  const commentBox = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'light';
     const utterancesTheme = theme === 'light' ? 'github-light' : 'github-dark';
 
-    const watchThemeSwitch = new MutationObserver((mutations) => {
-      const utterances = document.querySelector('.utterances-frame');
-      if (!utterances) return;
-
-      for (const mutation of mutations) {
-        if (mutation.attributeName !== 'class') return;
-        const theme = mutation.target.classList.contains('light') ? 'github-light' : 'github-dark';
-
+    const observeThemeSwitch = () => {
+      const utterances = document.querySelector('.utterances-frame') as HTMLIFrameElement | null;
+      if (utterances) {
+        const themeClass = utterances.classList.contains('github-light') ? 'light' : 'dark';
         const message = {
           type: 'set-theme',
-          theme: theme,
+          theme: themeClass,
         };
-
-        utterances.contentWindow.postMessage(message, 'https://utteranc.es');
+        const contentWindow = utterances.contentWindow;
+        if (contentWindow) {
+          contentWindow.postMessage(message, 'https://utteranc.es');
+        }
       }
-    });
+    };
 
-    let scriptEl = document.createElement('script');
+    const scriptEl = document.createElement('script');
     scriptEl.setAttribute('theme', utterancesTheme);
     scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
     scriptEl.setAttribute('crossorigin', 'anonymous');
     scriptEl.setAttribute('repo', 'GabrielDeFreitas/gabriel-freitas-blog');
     scriptEl.setAttribute('issue-term', 'title');
-    commentBox.current.replaceChildren(scriptEl);
 
-    watchThemeSwitch.observe(document.body, { attributes: true });
+    if (commentBox.current) {
+      commentBox.current.replaceChildren(scriptEl);
+    }
+
+    observeThemeSwitch();
+    const observer = new MutationObserver(observeThemeSwitch);
+    observer.observe(document.body, { attributes: true });
+
+    return () => {
+      observer.disconnect();
+    };
   }, [title]);
 
   return <div ref={commentBox} />;
