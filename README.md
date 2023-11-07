@@ -2,6 +2,11 @@
 
 > Live Site URL: [gabriel-freitas-blog](https://gabriel-freitas-blog.vercel.app/)
 
+<img
+  src="/public/homeBlog.PNG"
+  alt="PageSpeed ​​Insights performs on mobile version"
+  title="Optional title">
+
 ## Pagespeed Insight
 
 PageSpeed ​​Insights (PSI) tells you how a page actually performs on mobile and desktop.
